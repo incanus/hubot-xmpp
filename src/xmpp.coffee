@@ -136,7 +136,7 @@ class XmppBot extends Adapter
         # use full JIDs as user ID, since we don't get them in
         # standard groupchat messages
         from = getFrom(stanza)
-        console.log from
+        @robot.logger.debug from
         return if not from?
 
         [room, from] = from.split '/'
@@ -161,7 +161,7 @@ class XmppBot extends Adapter
 
       when 'unavailable'
         from = getFrom(stanza)
-        console.log from
+        @robot.logger.debug from
 
         [room, from] = from.split '/'
 
